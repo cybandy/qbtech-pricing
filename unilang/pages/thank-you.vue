@@ -9,10 +9,12 @@ useHead({
 
 <template>
 
-    <div class="h-5/6 grid place-content-center">
-        <SectionHeroV1 title="Thank You" description="We will reach out to you very soon. Have a nice day :)"
-            class="h-full">
+    <UContainer class="h-5/6">
+        <div class="h-full grid place-content-center">
+            <SectionHeroV1 title="Thank You" description="We will reach out to you very soon. Have a nice day :)"
+                class="h-full">
 
-        </SectionHeroV1>
-    </div>
+            </SectionHeroV1>
+        </div>
+    </UContainer>
 </template>

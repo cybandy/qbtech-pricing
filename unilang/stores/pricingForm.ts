@@ -29,6 +29,15 @@ export const usePricingFormStore = defineStore({
   }),
   actions: {
     async saveForm() {
+
+      if (this.questions[0].value.length == 0 || this.questions[1].value.length == 0) {
+        useToastError('Provide name and email')
+        return {
+          state: false,
+          data: {}
+        }
+      }
+
       const client = useSupabaseClient<Database>()
 
       const pricingStore = usePricingStore()

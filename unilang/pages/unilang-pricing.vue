@@ -25,13 +25,15 @@ function selectedPlanFunc(data: any) {
 
 const sendData = async () => {
     const res = await usePricingFormStore().saveForm()
+
     if (res.state) {
         useToastSuccess('You will hear from us soon')
         showPricingForm.value = false
         usePricingFormStore().$reset()
         pricingStore.$reset()
+        navigateTo('/thank-you')
     }
-    navigateTo('/thank-you')
+
 }
 </script>
 
