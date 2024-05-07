@@ -8,7 +8,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="h-screen">
+    <div class="h-screen overflow-y-auto">
         <UContainer>
             <TemplateHeaderMain />
         </UContainer>
