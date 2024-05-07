@@ -11,7 +11,7 @@ const links = [
 ]
 </script>
 <template>
-    <div class="py-4 flex items-center justify-between text-gray-500 dark:text-gray-400">
+    <UContainer class="py-4 flex items-center justify-between text-gray-500 dark:text-gray-400">
         <p class=" text-sm">
             &copy; 2023 QB-TECH All rights reserved
         </p>
@@ -20,5 +20,5 @@ const links = [
                 <UIcon dynamic :name="item.name" class="w-5 h-5" />
             </ULink>
         </div>
-    </div>
+    </UContainer>
 </template>

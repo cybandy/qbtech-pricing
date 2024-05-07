@@ -15,9 +15,9 @@ onMounted(() => {
         <div :style="{ paddingTop: menuHeaderHeight + 'px' }" class="h-full">
             <slot />
 
-            <UContainer>
+            <div class="bg-primary-50 dark:bg-primary-950/30">
                 <TemplateFooterMain />
-            </UContainer>
+            </div>
         </div>
     </div>
 </template>
