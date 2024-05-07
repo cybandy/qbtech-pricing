@@ -35,6 +35,9 @@ const sendData = async () => {
     }
 
 }
+
+const faqStore = useFaqStore()
+const { faqs } = storeToRefs(faqStore)
 </script>
 
 <template>
@@ -54,6 +57,26 @@ const sendData = async () => {
                     requirement, and the cost related to it will be bore by solely the client.">
 
             <ElementPricingCardV1 :features="additionalInfo" title="General" cycle="" :price="0" description="" />
+        </SectionHeroV2>
+
+        <SectionHeroV2 title="Frequently Asked Questions" description="Below are common questions and answers.">
+
+            <UAccordion :items="faqs" multiple :ui="{ item: { padding: 'px-3' } }">
+
+                <template #default="{ item, index, open }">
+                    <UButton color="gray" variant="ghost" class="border-b border-gray-200 dark:border-gray-700"
+                        :ui="{ rounded: 'rounded-none', padding: { sm: 'p-3' } }">
+
+                        <span class="truncate">{{ index + 1 }}. {{ item.label }}</span>
+
+                        <template #trailing>
+                            <UIcon name="i-heroicons-chevron-right-20-solid"
+                                class="w-5 h-5 ms-auto transform transition-transform duration-200"
+                                :class="[open && 'rotate-90']" />
+                        </template>
+                    </UButton>
+                </template>
+            </UAccordion>
         </SectionHeroV2>
 
         <ModalTitleButton @send="sendData" v-model="showPricingForm" title="Questionnaire"
