@@ -32,7 +32,8 @@ export const usePricingStore = defineStore({
       },
       {
         title: 'Premium',
-        price: 799,
+        price: 1099,
+        discount: 799,
         highlight: true,
         badge: { label: 'Popular', variant: 'subtle' } as Badge,
         description: 'Best for educational, e-commerce and medium size businesses',
@@ -48,7 +49,7 @@ export const usePricingStore = defineStore({
       },
       {
         title: 'Enterprise',
-        price: 799,
+        price: 'Custom',
         description: 'Best for big organizations',
         features: [
           'Unlimited Pages',
