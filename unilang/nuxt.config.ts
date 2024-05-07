@@ -17,7 +17,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/image',
     'nuxt-lodash',
-    "@nuxtjs/supabase"
+    "@nuxtjs/supabase",
   ],
   supabase: {
     redirect: false,

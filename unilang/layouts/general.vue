@@ -8,12 +8,16 @@ onMounted(() => {
 </script>
 
 <template>
-    <div>
+    <div class="h-screen">
         <UContainer>
             <TemplateHeaderMain />
         </UContainer>
-        <div :style="{ paddingTop: menuHeaderHeight + 'px' }">
+        <div :style="{ paddingTop: menuHeaderHeight + 'px' }" class="h-full">
             <slot />
+
+            <UContainer>
+                <TemplateFooterMain />
+            </UContainer>
         </div>
     </div>
 </template>

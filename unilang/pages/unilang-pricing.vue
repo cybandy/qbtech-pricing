@@ -22,6 +22,17 @@ function selectedPlanFunc(data: any) {
     pricingStore.selectById(selectedInd.value)
     showPricingForm.value = true
 }
+
+const sendData = async () => {
+    const res = await usePricingFormStore().saveForm()
+    if (res.state) {
+        useToastSuccess('You will hear from us soon')
+        showPricingForm.value = false
+        usePricingFormStore().$reset()
+        pricingStore.$reset()
+    }
+    navigateTo('/thank-you')
+}
 </script>
 
 <template>
@@ -43,7 +54,8 @@ function selectedPlanFunc(data: any) {
             <ElementPricingCardV1 :features="additionalInfo" title="General" cycle="" :price="0" description="" />
         </SectionHeroV2>
 
-        <ModalTitleButton v-model="showPricingForm" title="Questionnaire" button-confirm-label="Submit">
+        <ModalTitleButton @send="sendData" v-model="showPricingForm" title="Questionnaire"
+            button-confirm-label="Submit">
 
             <FormPricingFormV1 />
 
